@@ -115,7 +115,14 @@ app.get("/movies/add", (req, res)=>{
         res.send(movies);
     }
 });
-
+// Step_9:
+app.get("/movies/delete/:id", (req, res) => {
+    let id = `${req.params.id}`;
+    let movie = movies.find(item => item.id == id)
+    if (!movie) return res.send({ status: 404, error: true, message: `the movie ${req.params.id} does not exist` })
+    movies = movies.filter(item => item.id != id);
+    res.send({ status: 200, data: movies })
+});
 
 
 
