@@ -100,6 +100,22 @@ app.get("/movies/read/id/:id", (req, res)=>{
         res.send({status:200, data:movies.filter((movie)=>{return movie.id==req.params.id})})
     }
 });
+// Step_8
+app.get("/movies/add", (req, res)=>{
+    let {title, year, rating=4}=req.query;
+    let newArray=[...movies].sort((a,b) => a.id - b.id)
+    let id = sortedById[movies.length - 1].id + 1
+    let movie = {id, title, year, rating};
+
+    let valid=title && year && year.toString()==4 && isNaN(year);
+    if(!valid){
+        res.send({status:403, error:true, message:'you cannot create a movie without providing a title and a year'});
+    }else{
+        movies.push(movie);
+        res.send(movies);
+    }
+});
+
 
 
 
