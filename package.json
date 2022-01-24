@@ -4,8 +4,8 @@
   "description": "or CMDB for short",
   "main": "index.js",
   "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "dev": "nodemon index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/ZakariaBashir/Movie-DB/issues"
   },
-  "homepage": "https://github.com/ZakariaBashir/Movie-DB#readme"
+  "homepage": "https://github.com/ZakariaBashir/Movie-DB#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.2"
+  }
 }
